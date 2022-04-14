@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Compose Video Demo</string>
+    <string name="stock_video_16_9">https://joy.videvo.net/videvo_files/video/free/2019-01/originalContent/181015_13_Venice%20Beach%20Drone_25.mp4</string>
+    <string name="stock_video_9_16">https://assets.mixkit.co/videos/download/mixkit-portrait-of-a-fashion-woman-with-silver-makeup-39875.mp4</string>
+</resources>

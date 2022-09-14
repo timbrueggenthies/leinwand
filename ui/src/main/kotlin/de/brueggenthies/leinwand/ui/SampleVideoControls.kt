@@ -1,4 +1,5 @@
 @file:OptIn(ExperimentalVideoPlayerUi::class)
+
 package de.brueggenthies.leinwand.ui
 
 import androidx.compose.animation.EnterExitState
@@ -17,6 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import de.brueggenthies.leinwand.core.MutableVideoPlayerState
+import de.brueggenthies.leinwand.core.PlaybackState
+import de.brueggenthies.leinwand.core.VideoPlayerState
 import de.brueggenthies.leinwand.ui.components.PlayPauseButton
 import de.brueggenthies.leinwand.ui.components.Seekbar
 import de.brueggenthies.leinwand.ui.components.isSeeking
@@ -25,15 +29,12 @@ import de.brueggenthies.leinwand.ui.core.VideoControlsComponentsScope
 import de.brueggenthies.leinwand.ui.core.VideoControlsContainer
 import de.brueggenthies.leinwand.ui.core.VideoControlsState
 import de.brueggenthies.leinwand.ui.core.rememberVideoControlsState
-import de.brueggenthies.leinwand.core.MutableVideoPlayerState
-import de.brueggenthies.leinwand.core.PlaybackState
-import de.brueggenthies.leinwand.core.VideoPlayerState
 
 @Composable
 @ExperimentalVideoPlayerUi
 public fun SampleVideoControls(
     videoPlayerState: MutableVideoPlayerState,
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
 ) {
     val controlsState = rememberVideoControlsState {
         hideAutomatically = videoPlayerState.isPlaying

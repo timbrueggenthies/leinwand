@@ -1,3 +1,4 @@
+// ktlint-disable filename
 @file:OptIn(ExperimentalVideoPlayerUi::class)
 
 package de.brueggenthies.leinwand.ui
@@ -16,17 +17,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import de.brueggenthies.leinwand.ui.components.PlayPauseButton
-import de.brueggenthies.leinwand.ui.components.Seekbar
 import de.brueggenthies.leinwand.core.MutableVideoPlayerState
 import de.brueggenthies.leinwand.core.PlaybackState
+import de.brueggenthies.leinwand.ui.components.PlayPauseButton
+import de.brueggenthies.leinwand.ui.components.Seekbar
 import de.brueggenthies.leinwand.ui.core.VideoControlsContainer
 
 @Composable
 private fun DefaultVideoControls(
     playbackState: MutableVideoPlayerState,
     modifier: Modifier = Modifier,
-    editor: VideoControlsEditorScope.() -> Unit = { },
+    editor: VideoControlsEditorScope.() -> Unit = { }
 ) {
     val editorScope =
         remember { VideoControlsEditorScope(defaultSeekBar, defaultPlayPauseButton, defaultBackground, defaultLoadingIndicator) }

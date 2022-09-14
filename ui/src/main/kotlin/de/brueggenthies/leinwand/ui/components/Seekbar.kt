@@ -30,10 +30,10 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.constrain
 import androidx.compose.ui.unit.dp
-import de.brueggenthies.leinwand.ui.lerp
 import de.brueggenthies.leinwand.core.MutableVideoPlayerState
 import de.brueggenthies.leinwand.core.VideoPlayerState
 import de.brueggenthies.leinwand.ui.ExperimentalVideoPlayerUi
+import de.brueggenthies.leinwand.ui.lerp
 
 @Stable
 public class SeekbarState internal constructor() {
@@ -69,7 +69,7 @@ private fun Timeline(
     modifier: Modifier = Modifier,
     trackColor: Color = Color.White.copy(alpha = 0.4f),
     bufferColor: Color = Color.White,
-    progressColor: Color = Color.Red,
+    progressColor: Color = Color.Red
 ) {
     Box(
         modifier = modifier

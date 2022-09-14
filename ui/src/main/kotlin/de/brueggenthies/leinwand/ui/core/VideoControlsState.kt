@@ -42,7 +42,7 @@ public fun interface HideCondition {
     public suspend fun waitToHide()
 }
 
-public class DurationCondition(private val duration: Duration): HideCondition {
+public class DurationCondition(private val duration: Duration) : HideCondition {
     override suspend fun waitToHide() {
         delay(duration)
     }

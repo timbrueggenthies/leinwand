@@ -2,7 +2,6 @@ package de.brueggenthies.leinwand.ui.core
 
 import android.view.SurfaceView
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
@@ -43,7 +42,7 @@ private fun Modifier.checkConstraints() = layout { measurable, constraints ->
             - fillMax[Size|Height|Width] Modifier
             
             If your component needs to resize based on the currently playing video, please use the aspectRatio(videoPlayerState) Modifier.
-            """.trimIndent()
+        """.trimIndent()
     }
     val placeable = measurable.measure(constraints)
     layout(placeable.width, placeable.height) { placeable.placeRelative(0, 0) }

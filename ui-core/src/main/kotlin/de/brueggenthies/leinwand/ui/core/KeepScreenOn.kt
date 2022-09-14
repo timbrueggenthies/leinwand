@@ -3,16 +3,11 @@ package de.brueggenthies.leinwand.ui.core
 import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
-import android.view.WindowInsetsController
 import android.view.WindowManager
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import androidx.core.view.ViewCompat
-import androidx.core.view.ViewCompat.getWindowInsetsController
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import de.brueggenthies.leinwand.core.VideoPlayerState
 
 public fun interface KeepScreenOnCondition {

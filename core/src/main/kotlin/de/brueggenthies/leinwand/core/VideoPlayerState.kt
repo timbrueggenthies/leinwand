@@ -5,16 +5,9 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Stable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.IntSize
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Lifecycle.State.RESUMED
-import androidx.lifecycle.LifecycleEventObserver
-import androidx.lifecycle.LifecycleObserver
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
@@ -139,34 +132,6 @@ public fun rememberVideoPlayerState(
         onDispose { currentPlayer.release() }
     }
     return rememberVideoPlayerState(player = player)
-}
-
-@Composable
-public fun PauseWithLifecycle(
-    player: MutableVideoPlayerState,
-    pauseBelow: Lifecycle.State = RESUMED,
-    restart: Boolean = true
-) {
-    val lifecycleOwner = LocalLifecycleOwner.current
-    val latestRestart by rememberUpdatedState(newValue = restart)
-    val latestPauseBelow by rememberUpdatedState(newValue = pauseBelow)
-    val latestIsReady by rememberUpdatedState(newValue = player.playbackState == PlaybackState.Ready)
-    DisposableEffect(lifecycleOwner, player) {
-        var wasPlaying = player.isPlaying
-        val observer: LifecycleObserver = LifecycleEventObserver { _, event ->
-            when {
-                event == Lifecycle.Event.downFrom(latestPauseBelow) -> {
-                    wasPlaying = player.isPlaying
-                    player.isPlaying = false
-                }
-                latestRestart && latestIsReady && event == Lifecycle.Event.upTo(latestPauseBelow) -> {
-                    player.isPlaying = wasPlaying
-                }
-            }
-        }
-        lifecycleOwner.lifecycle.addObserver(observer)
-        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
-    }
 }
 
 @Composable

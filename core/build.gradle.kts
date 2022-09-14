@@ -48,7 +48,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.compose.ui)
     api(libs.media3.exoplayer)
 }

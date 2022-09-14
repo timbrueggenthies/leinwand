@@ -36,7 +36,7 @@ leinwand = "0.1.0-alpha01"
 
 ktlint = "0.47.1"
 
-ktlint-composeRules = "0.0.6"
+ktlint-composeRules = "0.0.9"
 
 [libraries]
 

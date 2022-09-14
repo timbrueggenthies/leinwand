@@ -58,9 +58,9 @@ publishing {
     publications {
         // Creates a Maven publication called "release".
         create<MavenPublication>("maven") {
-            groupId = properties["groupId"].toString()
+            groupId = group.toString()
             artifactId = "ui-core"
-            version = properties["version"].toString()
+            version = "0.1.0-alpha01"
             afterEvaluate {
                 from(components["release"])
             }

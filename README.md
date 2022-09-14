@@ -1,5 +1,7 @@
 # Compose Video Player (WIP)
 
+[![](https://jitpack.io/v/timbrueggenthies/leinwand.svg)](https://jitpack.io/#timbrueggenthies/leinwand)
+
 A UI Component Library that enables Video Playback and Control in your Compose UI. The components are build from the ground up with Compose, so the only usage of the view based system is the the SurfaceView to display the Video playback.
 
 

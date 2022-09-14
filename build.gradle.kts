@@ -1,6 +1,4 @@
 subprojects {
-    group = "de.brueggenthies.leinwand"
-
     val ktlintConfig by configurations.creating
 
     dependencies {

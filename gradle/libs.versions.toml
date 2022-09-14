@@ -34,6 +34,10 @@ compose-destinations = "1.7.19-beta"
 
 leinwand = "0.1.0-alpha01"
 
+ktlint = "0.47.1"
+
+ktlint-composeRules = "0.0.6"
+
 [libraries]
 
 org-jacoco-ant = "org.jacoco:org.jacoco.ant:0.8.3"
@@ -73,3 +77,7 @@ leinwand-core = { group = "com.github.timbrueggenthies.leinwand", name = "core",
 leinwand-ui-core = { group = "com.github.timbrueggenthies.leinwand", name = "ui-core", version.ref = "leinwand" }
 
 leinwand-ui = { group = "com.github.timbrueggenthies.leinwand", name = "ui", version.ref = "leinwand" }
+
+ktlint = { group = "com.pinterest", name = "ktlint", version.ref = "ktlint" }
+
+ktlint-composeRules = { group = "com.twitter.compose.rules", name = "ktlint", version.ref = "ktlint-composeRules" }

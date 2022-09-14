@@ -8,7 +8,7 @@ A UI Component Library that enables Video Playback and Control in your Compose U
 # Usage
 
 ## Add dependency
-For now, the library is only published via Jitpack. Therefore, to use the library, you need to include the repository in your build.gradle file.
+For now, the library is only published via Jitpack. Therefore, to use the library, you need to include the repository in your projects build.gradle(.kts) file.
 ```kotlin
 allProjects {
   repositories {

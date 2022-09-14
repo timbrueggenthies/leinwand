@@ -24,10 +24,9 @@ public fun VideoPlaybackSurface(player: Player, modifier: Modifier = Modifier) {
         factory = { surfaceView }
     )
     DisposableEffect(player) {
-        val currentPlayer = player
-        currentPlayer.setVideoSurfaceView(surfaceView)
+        player.setVideoSurfaceView(surfaceView)
         onDispose {
-            currentPlayer.clearVideoSurfaceView(surfaceView)
+            player.clearVideoSurfaceView(surfaceView)
         }
     }
 }

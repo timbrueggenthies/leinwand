@@ -6,10 +6,12 @@ import android.content.ContextWrapper
 import android.view.WindowManager
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import de.brueggenthies.leinwand.core.VideoPlayerState
 
+@Stable
 public fun interface KeepScreenOnCondition {
     public fun keepOn(): Boolean
 
@@ -24,13 +26,13 @@ public fun interface KeepScreenOnCondition {
 public fun KeepScreenOnWhile(keepScreenOn: KeepScreenOnCondition) {
     val keep = keepScreenOn.keepOn()
     val context = LocalContext.current
-    val window = remember(context) { context.findActivity()?.window }
+    val window = remember(context) { context.findActivity()?.window } ?: return
     DisposableEffect(window, keep) {
         if (keep) {
-            window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
         onDispose {
-            window?.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
     }
 }

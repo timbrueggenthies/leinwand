@@ -16,10 +16,6 @@ public enum class FullScreenMode {
     Off, On
 }
 
-public enum class SystemBarBehaviour {
-    ShowByTouch, ShowBySwipe, ShowTransientBySwipe
-}
-
 @Composable
 public fun ImmersiveMode(mode: FullScreenMode) {
     val context = LocalContext.current
@@ -30,7 +26,7 @@ public fun ImmersiveMode(mode: FullScreenMode) {
     LaunchedEffect(controller) {
         controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
-    DisposableEffect(controller, mode == FullScreenMode.Off) {
+    DisposableEffect(controller, mode) {
         when (mode) {
             FullScreenMode.Off -> controller.show(WindowInsetsCompat.Type.systemBars())
             FullScreenMode.On -> controller.hide(WindowInsetsCompat.Type.systemBars())

@@ -24,6 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Leinwand"
 include(":ui")
-//include(":demo")
+include(":demo")
 include(":core")
 include(":ui-core")
